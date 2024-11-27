@@ -1,14 +1,5 @@
-import Image from "next/image";
-
-// export async function generateMetadata(): Promise<Metadata> {
-//   return {
-//     title: "ComputedMeta ",
-//     icons: {
-//       icon: "/asdasd.jpg",
-//     },
-//   };
-// }
+import { Htag } from "@/components";
 
 export default function Home() {
-  return <div>sdfsdfsdfsdfsdf</div>;
+  return <Htag tag="h3">sdf</Htag>;
 }
