@@ -12,6 +12,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const geistSansBold = localFont({
+  src: "./fonts/OpenSans-Bold.ttf",
+  variable: "--font-geist-sans-bold",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "MyTop",
@@ -25,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSansBold.variable} ${geistSansBold.variable}`}>
         {children}
       </body>
     </html>
