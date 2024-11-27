@@ -1,5 +1,11 @@
-import { Htag } from "@/components";
+import { Htag, Button } from "@/components";
 
 export default function Home() {
-  return <Htag tag="h3">sdf</Htag>;
+  return (
+    <div>
+      <Htag tag="h3">sdf</Htag>
+      <Button appearance="primary">Hello</Button>
+      <Button appearance="ghost">Hello</Button>
+    </div>
+  );
 }
