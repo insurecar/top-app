@@ -2,14 +2,14 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Metadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "ComputedMeta ",
-    icons: {
-      icon: "/asdasd.jpg",
-    },
-  };
-}
+// export async function generateMetadata(): Promise<Metadata> {
+//   return {
+//     title: "ComputedMeta ",
+//     icons: {
+//       icon: "/asdasd.jpg",
+//     },
+//   };
+// }
 
 export default function Home() {
   return (
