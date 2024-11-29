@@ -1,4 +1,4 @@
-import { Htag, Button } from "@/components";
+import { Htag, Button, Ptag } from "@/components";
 
 import Logo from "./Logo.svg";
 
@@ -16,6 +16,10 @@ export default function Home() {
       <Button appearence="ghost" arrow="right">
         Hello
       </Button>
+
+      <Ptag size="s">qw</Ptag>
+      <Ptag size="m">qw</Ptag>
+      <Ptag size="l">qw</Ptag>
     </div>
   );
 }
