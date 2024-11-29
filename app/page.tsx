@@ -1,4 +1,4 @@
-import { Htag, Button, Ptag } from "@/components";
+import { Htag, Button, Ptag, Tag } from "@/components";
 
 import Logo from "./Logo.svg";
 
@@ -20,6 +20,9 @@ export default function Home() {
       <Ptag size="s">qw</Ptag>
       <Ptag size="m">qw</Ptag>
       <Ptag size="l">qw</Ptag>
+      <Tag size="m" color="primary">
+        sgsfsdf
+      </Tag>
     </div>
   );
 }
