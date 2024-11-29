@@ -7,8 +7,15 @@ export default function Home() {
     <div>
       <Logo />
       <Htag tag="h3">sdf</Htag>
-      <Button appearance="primary">Hello</Button>
-      <Button appearance="ghost">Hello</Button>
+      <Button appearence="primary">Hello</Button>
+      <Button appearence="ghost">Hello</Button>
+      <Button appearence="ghost" arrow="down">
+        Hello
+      </Button>
+
+      <Button appearence="ghost" arrow="right">
+        Hello
+      </Button>
     </div>
   );
 }
