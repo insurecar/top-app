@@ -11,13 +11,11 @@ export const Button = ({
   ...props
 }: ButtonProps): JSX.Element => {
   const buttonClasses = cn(styles.button, className, {
-    [styles.primary]: appearence === "primary",
-    [styles.ghost]: appearence === "ghost",
+    [styles[appearence]]: appearence,
   });
 
   const arrowClasses = cn(styles.arrow, {
-    [styles.right]: arrow === "right",
-    [styles.down]: arrow === "down",
+    [styles[arrow]]: arrow,
   });
   return (
     <button className={buttonClasses} {...props}>
