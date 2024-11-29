@@ -1,8 +1,12 @@
-import { Htag, Button, Ptag, Tag } from "@/components";
+"use client";
+
+import { Htag, Button, Ptag, Tag, Rating } from "@/components";
 
 import Logo from "./Logo.svg";
+import { useState } from "react";
 
 export default function Home() {
+  const [rating, setRating] = useState(4);
   return (
     <div>
       <Logo />
@@ -23,6 +27,7 @@ export default function Home() {
       <Tag size="m" color="primary">
         sgsfsdf
       </Tag>
+      <Rating isEditable rating={rating} setRating={setRating} />
     </div>
   );
 }
