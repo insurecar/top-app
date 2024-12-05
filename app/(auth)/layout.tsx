@@ -1,14 +1,18 @@
-export default function RootLayout({
+import { Header, Footer, Sidebar } from "../../components";
+
+export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <div>Авторизація</div>
-        {children}
-      </body>
-    </html>
+    <>
+      <Header />
+      <div>
+        <Sidebar />
+        <div>{children}</div>
+      </div>
+      <Footer />
+    </>
   );
 }
