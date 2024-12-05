@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config: any) => {
+  webpack: (config: import('webpack').Configuration) => {
     // Додайте правило для обробки SVG
-    config.module.rules.push({
+    config.module?.rules?.push({
       test: /\.svg$/, // Усі файли з розширенням .svg
       use: [
         {
@@ -18,8 +18,8 @@ const nextConfig = {
                 },
               ],
             },
-          }
-        }
+          },
+        },
       ],
     });
     return config;
