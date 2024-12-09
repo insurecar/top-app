@@ -8,5 +8,6 @@ export async function getMenu(firstCategory: number) {
       firstCategory,
     }),
   });
+
   return res.json();
 }
