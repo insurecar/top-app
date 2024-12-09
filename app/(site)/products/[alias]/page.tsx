@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import { getPage } from "@/api";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Сторінка",
@@ -9,14 +11,15 @@ interface PageProps {
     alias: string;
   };
 }
-export async function generateStaticParams() {
-  return [{ alias: "product1" }, { alias: "product2" }];
-}
 
 const PageProducts = async ({ params }: PageProps) => {
-  console.log(params.alias);
+  const page = await getPage(params.alias);
 
-  return <div>Сторінка з </div>;
+  if (!page) {
+    notFound();
+  }
+
+  return <div>Сторінка з {page.title} </div>;
 };
 
 export default PageProducts;
