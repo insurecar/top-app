@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getPage } from "@/api";
+import { getMenu, getPage } from "@/api";
 import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
@@ -9,14 +9,25 @@ export const metadata: Metadata = {
 interface PageProps {
   params: Promise<{
     alias: string;
-  }>; // params тепер є Promise
+  }>;
+}
+
+interface MenuItem {
+  pages: {
+    alias: string;
+  }[];
+}
+
+export async function generateStaticParams() {
+  const menu = await getMenu(0);
+  return menu.flatMap((item: MenuItem) =>
+    item.pages.map((page) => ({ alias: page.alias }))
+  );
 }
 
 const PageProducts = async ({ params }: PageProps) => {
-  // Чекаємо на вирішення Promise params
   const resolvedParams = await params;
 
-  // Тепер можемо безпечно працювати з resolvedParams
   const page = await getPage(resolvedParams.alias);
 
   if (!page) {
