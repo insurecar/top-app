@@ -7,19 +7,23 @@ export const metadata: Metadata = {
 };
 
 interface PageProps {
-  params: {
+  params: Promise<{
     alias: string;
-  };
+  }>; // params тепер є Promise
 }
 
 const PageProducts = async ({ params }: PageProps) => {
-  const page = await getPage(params.alias);
+  // Чекаємо на вирішення Promise params
+  const resolvedParams = await params;
+
+  // Тепер можемо безпечно працювати з resolvedParams
+  const page = await getPage(resolvedParams.alias);
 
   if (!page) {
     notFound();
   }
 
-  return <div>Сторінка з {page.title} </div>;
+  return <div>Сторінка з {page.title}</div>;
 };
 
 export default PageProducts;
