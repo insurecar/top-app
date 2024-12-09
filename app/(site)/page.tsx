@@ -10,7 +10,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const menu = await getMenu(0);
   // const menu = await getUser();
-  console.log(111);
 
   return (
     <main>
