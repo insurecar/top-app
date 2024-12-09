@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { getMenu } from "@/api";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -6,6 +7,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function Home() {
-  return <>Головна сторінка</>;
+export default async function Home() {
+  const menu = await getMenu(0);
+  // const menu = await getUser();
+  console.log(111);
+
+  return (
+    <main>
+      <pre>{JSON.stringify(menu, null, 2)}</pre>
+      <div>{menu.length}</div>
+    </main>
+  );
 }
