@@ -8,12 +8,6 @@ export interface IAppContext {
   setMenu?: (newMenu: MenuItem[]) => void;
 }
 
-export interface IAppContext {
-  menu: MenuItem[];
-  firstCategory: TopLevelCategory;
-  setMenu?: (newMenu: MenuItem[]) => void;
-}
-
 export const AppContext = createContext<IAppContext>({
   menu: [],
   firstCategory: TopLevelCategory.Courses,
@@ -34,3 +28,19 @@ export const AppContextProvider = ({
     </AppContext.Provider>
   );
 };
+
+// export interface IAppContext {
+//   menu: MenuItem[];
+//   firstCategory: TopLevelCategory;
+//   setMenu?: (numb: number) => void;
+// }
+// const AppContext = createContext<IAppContext>({
+//   menu: [],
+//   firstCategory: TopLevelCategory.Courses,
+// });
+
+// export const AppContextProvider = ({ children }: ReactNode) => {
+//   const [menu, setMenu] = useState([])
+
+//   return <AppContext.Provider value={menu}>{children}</AppContext.Provider>;
+// };
